@@ -1,0 +1,2461 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Flavour Fusion</title>
+
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #FAF7F2;
+            color: #2B1D16;
+        }
+
+
+
+        /* ================================================= */
+        /* ================= NAVBAR ======================== */
+        /* ================================================= */
+
+        nav {
+            width: 100%;
+            height: 90px;
+
+            padding: 0 60px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            position: absolute;
+
+            top: 0;
+            left: 0;
+
+            z-index: 10;
+
+            background-color: #FAF7F2;
+
+            border-bottom: 1px solid #e8ded3;
+        }
+
+
+
+        /* ================= LOGO ================= */
+
+        .brand {
+            display: flex;
+            align-items: center;
+
+            gap: 12px;
+        }
+
+
+        .brand img {
+            width: 48px;
+            height: 48px;
+
+            object-fit: contain;
+        }
+
+
+        .brand-text h2 {
+            color: #8B1E1E;
+
+            font-size: 23px;
+
+            letter-spacing: 1px;
+        }
+
+
+        .brand-text p {
+            color: #6d5b50;
+
+            font-size: 15px;
+
+            letter-spacing: 1.5px;
+
+            margin-top: 4px;
+        }
+
+
+
+        /* ================= NAVIGATION ================= */
+
+        .nav-links {
+            display: flex;
+
+            align-items: center;
+
+            gap: 35px;
+        }
+
+
+        .nav-links a {
+            text-decoration: none;
+
+            color: #2B1D16;
+
+            font-size: 20px;
+
+            font-weight: 500;
+
+            transition: 0.3s;
+        }
+
+
+        .nav-links a:hover {
+            color: #8B1E1E;
+        }
+
+
+
+        /* ================= ORDER BUTTON ================= */
+
+        .order-btn {
+            padding: 11px 22px;
+
+            background-color: #8B1E1E;
+
+            color: white;
+
+            border: none;
+
+            border-radius: 25px;
+
+            font-size: 16px;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+
+        .order-btn:hover {
+            background-color: #641515;
+
+            transform: scale(1.05);
+        }
+
+
+
+        /* ================================================= */
+        /* ================= HERO ========================== */
+        /* ================================================= */
+
+        .hero {
+            width: 100%;
+
+            height: 100vh;
+
+            position: relative;
+
+            overflow: hidden;
+        }
+
+
+
+        /* ================= HERO IMAGES ================= */
+
+        .hero-bg {
+            position: absolute;
+
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: 100%;
+
+            background-size: cover;
+
+            background-position: center;
+
+            opacity: 0;
+
+            animation: fadeImage 35s infinite;
+        }
+
+
+        .image1 {
+            background-image: url("images/hero-thali.jpg");
+
+            animation-delay: 0s;
+        }
+
+
+        .image2 {
+            background-image: url("images/chicken-thali.jpg");
+
+            animation-delay: 5s;
+        }
+
+
+        .image3 {
+            background-image: url("images/mutton-thali.jpg");
+
+            animation-delay: 10s;
+        }
+
+
+        .image4 {
+            background-image: url("images/fish-curry.jpg");
+
+            animation-delay: 15s;
+        }
+
+
+        .image5 {
+            background-image: url("images/egg-curry.jpg");
+
+            animation-delay: 20s;
+        }
+
+
+        .image6 {
+            background-image: url("images/veg-thali.jpg");
+
+            animation-delay: 25s;
+        }
+
+
+        .image7 {
+            background-image: url("images/about-kitchen.jpg");
+
+            animation-delay: 30s;
+        }
+
+
+
+        /* ================= HERO OVERLAY ================= */
+
+        .hero-bg::after {
+            content: "";
+
+            position: absolute;
+
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: 100%;
+
+            background: rgba(0, 0, 0, 0.42);
+        }
+
+
+
+        /* ================= FADE ================= */
+
+        @keyframes fadeImage {
+
+            0% {
+                opacity: 0;
+            }
+
+            7% {
+                opacity: 1;
+            }
+
+            20% {
+                opacity: 1;
+            }
+
+            27% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 0;
+            }
+
+        }
+
+
+
+        /* ================= HERO CONTENT ================= */
+
+        .hero-content {
+
+            position: absolute;
+
+            z-index: 5;
+
+            top: 55%;
+
+            left: 8%;
+
+            transform: translateY(-50%);
+
+            max-width: 650px;
+
+            color: white;
+        }
+
+
+        .small-text {
+
+            color: #f0c98e;
+
+            font-size: 13px;
+
+            letter-spacing: 3px;
+
+            margin-bottom: 20px;
+        }
+
+
+        .hero-content h1 {
+
+            font-size: 58px;
+
+            line-height: 1.1;
+
+            margin-bottom: 25px;
+
+            font-weight: 700;
+        }
+
+
+        .hero-content h1 span {
+
+            color: #f0c98e;
+        }
+
+
+        .hero-content h3 {
+
+            font-size: 17px;
+
+            line-height: 1.7;
+
+            font-weight: 400;
+
+            color: #f5f5f5;
+
+            max-width: 550px;
+
+            margin-bottom: 30px;
+        }
+
+
+        .hero-btn {
+
+            padding: 14px 30px;
+
+            background-color: #8B1E1E;
+
+            color: white;
+
+            border: none;
+
+            border-radius: 30px;
+
+            font-size: 14px;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+
+        .hero-btn:hover {
+
+            background-color: #641515;
+
+            transform: translateY(-3px);
+        }
+
+
+
+        /* ================================================= */
+        /* ================= ABOUT ========================= */
+        /* ================================================= */
+
+        .about {
+
+            min-height: 500px;
+
+            padding: 90px 8%;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 60px;
+
+            background-color: #FAF7F2;
+        }
+
+
+        .about-text {
+
+            width: 50%;
+        }
+
+
+        .small-heading {
+
+            color: #8B1E1E;
+
+            font-size: 20px;
+
+            letter-spacing: 2px;
+
+            margin-bottom: 15px;
+        }
+
+
+        .about-text h2 {
+
+            font-size: 40px;
+
+            line-height: 1.2;
+
+            margin-bottom: 20px;
+        }
+
+
+        .description {
+
+            color: #6d5b50;
+
+            font-size: 22px;
+
+            line-height: 1.8;
+
+            max-width: 550px;
+        }
+
+
+        .about-image {
+
+            width: 45%;
+        }
+
+
+        .about-image img {
+
+            width: 100%;
+
+            height: 350px;
+
+            object-fit: cover;
+
+            border-radius: 15px;
+
+            box-shadow: 0 15px 35px rgba(43, 29, 22, 0.15);
+        }
+
+
+
+        /* ================================================= */
+        /* =============== ORDER FEATURES ================== */
+        /* ================================================= */
+
+        .order-features {
+
+            background-color: #FAF7F2;
+
+            padding: 45px 8%;
+
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 25px;
+        }
+
+
+        .order-card {
+
+            background-color: #EFE2D0;
+
+            border: 1px solid #dfcdb6;
+
+            border-radius: 15px;
+
+            padding: 25px 20px;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 18px;
+
+            transition: 0.3s ease;
+
+            cursor: pointer;
+        }
+
+
+        .order-card:hover {
+
+            transform: translateY(-6px);
+
+            box-shadow: 0 12px 28px rgba(43, 29, 22, 0.12);
+
+            border-color: #C99A4A;
+        }
+
+
+        .order-icon {
+
+            width: 58px;
+
+            height: 58px;
+
+            min-width: 58px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            background-color: #8B1E1E;
+
+            color: white;
+
+            border-radius: 50%;
+
+            font-size: 25px;
+        }
+
+
+        .order-card h3 {
+
+            color: #8B1E1E;
+
+            font-size: 19px;
+
+            margin-bottom: 7px;
+        }
+
+
+        .order-card p {
+
+            color: #6d5b50;
+
+            font-size: 14px;
+
+            line-height: 1.5;
+        }
+
+
+
+        /* ================================================= */
+        /* =============== WHY CHOOSE US =================== */
+        /* ================================================= */
+
+        .why-section {
+
+            background-color: #EFE2D0;
+
+            padding: 80px 8% 100px;
+
+            text-align: center;
+        }
+
+
+        .heading-line {
+
+            width: 70px;
+
+            height: 3px;
+
+            background-color: #C99A4A;
+
+            margin: 0 auto 18px;
+
+            position: relative;
+        }
+
+
+        .heading-line::before,
+        .heading-line::after {
+
+            content: "";
+
+            position: absolute;
+
+            top: 1px;
+
+            width: 35px;
+
+            height: 1px;
+
+            background-color: #C99A4A;
+        }
+
+
+        .heading-line::before {
+
+            right: 75px;
+        }
+
+
+        .heading-line::after {
+
+            left: 75px;
+        }
+
+
+        .why-heading {
+
+            color: #8B1E1E;
+
+            font-size: 42px;
+
+            margin-bottom: 12px;
+
+            font-weight: 700;
+        }
+
+
+        .why-subtitle {
+
+            color: #6d5b50;
+
+            font-size: 24px;
+
+            margin-bottom: 55px;
+
+            letter-spacing: 0.8px;
+
+            line-height: 1.6;
+
+            font-weight: 400;
+        }
+
+
+        /* ================= FEATURES GRID ================= */
+
+        .why-container {
+
+            max-width: 1100px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            position: relative;
+        }
+
+
+        /* ================= VERTICAL DIVIDER ================= */
+
+        .why-container::before {
+
+            content: "";
+
+            position: absolute;
+
+            top: 10px;
+
+            bottom: 10px;
+
+            left: 50%;
+
+            width: 1px;
+
+            background: linear-gradient(
+                to bottom,
+                transparent,
+                #d8c4a8,
+                #C99A4A,
+                #d8c4a8,
+                transparent
+            );
+        }
+
+
+        /* ================= FEATURE ================= */
+
+        .feature {
+
+            padding: 25px 55px;
+
+            min-height: 190px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            justify-content: center;
+
+            transition: 0.4s ease;
+
+            position: relative;
+        }
+
+
+        .feature:nth-child(1),
+        .feature:nth-child(2) {
+
+            border-bottom: 1px solid #d8c4a8;
+        }
+
+
+        .feature-icon {
+
+            width: 65px;
+
+            height: 65px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background-color: #fffaf3;
+
+            border: 1px solid #dfc59f;
+
+            font-size: 29px;
+
+            margin-bottom: 18px;
+
+            transition: 0.4s ease;
+
+            box-shadow: 0 6px 15px rgba(139, 30, 30, 0.08);
+        }
+
+
+        .feature h2 {
+
+            color: #2B1D16;
+
+            font-size: 21px;
+
+            margin-bottom: 9px;
+
+            font-weight: 600;
+        }
+
+
+        .feature p {
+
+            color: #6d5b50;
+
+            font-size: 15px;
+
+            line-height: 1.6;
+
+            max-width: 320px;
+        }
+
+
+        .feature:hover {
+
+            transform: translateY(-6px);
+        }
+
+
+        .feature:hover .feature-icon {
+
+            background-color: #8B1E1E;
+
+            border-color: #8B1E1E;
+
+            transform: scale(1.08);
+
+            box-shadow: 0 10px 25px rgba(139, 30, 30, 0.20);
+        }
+
+
+
+        /* ================================================= */
+        /* =============== SIGNATURE DISHES ================ */
+        /* ================================================= */
+
+        .signature-section {
+
+            background-color: #FAF7F2;
+
+            padding: 90px 8% 100px;
+
+            text-align: center;
+        }
+
+
+        .signature-heading {
+
+            color: #8B1E1E;
+
+            font-size: 42px;
+
+            margin-bottom: 12px;
+
+            font-weight: 700;
+        }
+
+
+        .signature-subtitle {
+
+            color: #6d5b50;
+
+            font-size: 22px;
+
+            line-height: 1.6;
+
+            margin-bottom: 50px;
+        }
+
+
+        /* ================= DISH GRID ================= */
+
+        .dish-container {
+
+            max-width: 1200px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns: repeat(4, 1fr);
+
+            gap: 25px;
+        }
+
+
+        /* ================= DISH CARD ================= */
+
+        .dish-card {
+
+            background-color: #EFE2D0;
+
+            border-radius: 18px;
+
+            overflow: hidden;
+
+            text-align: left;
+
+            box-shadow: 0 8px 25px rgba(43, 29, 22, 0.08);
+
+            transition: 0.4s ease;
+        }
+
+
+        .dish-card:hover {
+
+            transform: translateY(-8px);
+
+            box-shadow: 0 18px 35px rgba(43, 29, 22, 0.15);
+        }
+
+
+        /* ================= DISH IMAGE ================= */
+
+        .dish-image {
+
+            width: 100%;
+
+            height: 230px;
+
+            overflow: hidden;
+
+            position: relative;
+        }
+
+
+        .dish-image img {
+
+            width: 100%;
+
+            height: 100%;
+
+            object-fit: cover;
+
+            transition: 0.5s ease;
+        }
+
+
+        .dish-card:hover .dish-image img {
+
+            transform: scale(1.08);
+        }
+
+
+        /* ================= POPULAR BADGE ================= */
+
+        .popular-badge {
+
+            position: absolute;
+
+            top: 15px;
+
+            left: 15px;
+
+            background-color: #8B1E1E;
+
+            color: white;
+
+            padding: 7px 13px;
+
+            border-radius: 20px;
+
+            font-size: 12px;
+
+            font-weight: 600;
+
+            letter-spacing: 0.5px;
+        }
+
+
+        /* ================= DISH CONTENT ================= */
+
+        .dish-content {
+
+            padding: 22px;
+        }
+
+
+        .dish-content h2 {
+
+            color: #2B1D16;
+
+            font-size: 21px;
+
+            margin-bottom: 8px;
+        }
+
+
+        .dish-content p {
+
+            color: #6d5b50;
+
+            font-size: 14px;
+
+            line-height: 1.6;
+
+            min-height: 45px;
+
+            margin-bottom: 18px;
+        }
+
+
+        /* ================= PRICE + BUTTON ================= */
+
+        .dish-bottom {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+        }
+
+
+        .price {
+
+            color: #8B1E1E;
+
+            font-size: 21px;
+
+            font-weight: 700;
+        }
+
+
+        .dish-btn {
+
+            background-color: #8B1E1E;
+
+            color: white;
+
+            border: none;
+
+            padding: 9px 15px;
+
+            border-radius: 20px;
+
+            font-size: 12px;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+
+        .dish-btn:hover {
+
+            background-color: #641515;
+
+            transform: scale(1.05);
+        }
+
+
+
+        /* ================================================= */
+        /* ================= RESPONSIVE ==================== */
+        /* ================================================= */
+
+        @media (max-width: 1000px) {
+
+            .dish-container {
+
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+        }
+
+
+        @media (max-width: 900px) {
+
+            nav {
+
+                padding: 0 25px;
+            }
+
+
+            .nav-links {
+
+                gap: 15px;
+            }
+
+
+            .nav-links a {
+
+                font-size: 12px;
+            }
+
+
+            .hero-content h1 {
+
+                font-size: 45px;
+            }
+
+
+            .about {
+
+                padding: 70px 6%;
+            }
+
+
+            .description {
+
+                font-size: 20px;
+            }
+
+
+            .feature {
+
+                padding: 25px 30px;
+            }
+
+
+            .order-features {
+
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+
+
+        /* ================================================= */
+        /* ================= MOBILE ======================== */
+        /* ================================================= */
+
+        @media (max-width: 650px) {
+
+            nav {
+
+                height: 75px;
+
+                padding: 0 20px;
+            }
+
+
+            .brand img {
+
+                width: 40px;
+
+                height: 40px;
+            }
+
+
+            .brand-text h2 {
+
+                font-size: 18px;
+            }
+
+
+            .brand-text p {
+
+                font-size: 8px;
+            }
+
+
+            .nav-links {
+
+                display: none;
+            }
+
+
+            .order-btn {
+
+                padding: 9px 16px;
+
+                font-size: 12px;
+            }
+
+
+
+            /* ================= HERO ================= */
+
+            .hero-content {
+
+                left: 7%;
+
+                right: 7%;
+
+                top: 55%;
+            }
+
+
+            .hero-content h1 {
+
+                font-size: 38px;
+            }
+
+
+            .hero-content h3 {
+
+                font-size: 18px;
+            }
+
+
+            .small-text {
+
+                font-size: 12px;
+
+                letter-spacing: 2px;
+            }
+
+
+
+            /* ================= ABOUT ================= */
+
+            .about {
+
+                flex-direction: column;
+
+                padding: 60px 7%;
+            }
+
+
+            .about-text,
+            .about-image {
+
+                width: 100%;
+            }
+
+
+            .about-text h2 {
+
+                font-size: 32px;
+            }
+
+
+            .description {
+
+                font-size: 17px;
+            }
+
+
+            .about-image img {
+
+                height: 280px;
+            }
+
+
+
+            /* ================= ORDER FEATURES ================= */
+
+            .order-features {
+
+                grid-template-columns: 1fr;
+
+                padding: 35px 7%;
+
+                gap: 18px;
+            }
+
+
+            .order-card {
+
+                padding: 22px;
+            }
+
+
+
+            /* ================= WHY CHOOSE US ================= */
+
+            .why-section {
+
+                padding: 65px 7% 70px;
+            }
+
+
+            .why-heading {
+
+                font-size: 32px;
+            }
+
+
+            .why-subtitle {
+
+                font-size: 20px;
+
+                line-height: 1.6;
+
+                margin-bottom: 35px;
+            }
+
+
+            .why-container {
+
+                grid-template-columns: 1fr;
+            }
+
+
+            .why-container::before {
+
+                display: none;
+            }
+
+
+            .feature:nth-child(1),
+            .feature:nth-child(2) {
+
+                border-bottom: none;
+            }
+
+
+            .feature {
+
+                min-height: 180px;
+
+                padding: 25px 10px;
+
+                border-bottom: 1px solid #d8c4a8;
+            }
+
+
+            .feature:last-child {
+
+                border-bottom: none;
+            }
+
+
+            .feature-icon {
+
+                width: 58px;
+
+                height: 58px;
+
+                font-size: 25px;
+            }
+
+
+            .feature h2 {
+
+                font-size: 19px;
+            }
+
+
+            .feature p {
+
+                font-size: 14px;
+            }
+
+
+
+            /* ================= SIGNATURE DISHES ================= */
+
+            .signature-section {
+
+                padding: 65px 7% 75px;
+            }
+
+
+            .signature-heading {
+
+                font-size: 32px;
+            }
+
+
+            .signature-subtitle {
+
+                font-size: 18px;
+
+                margin-bottom: 35px;
+            }
+
+
+            .dish-container {
+
+                grid-template-columns: 1fr;
+
+                gap: 22px;
+            }
+
+
+            .dish-image {
+
+                height: 250px;
+            }
+
+
+            .dish-content h2 {
+
+                font-size: 20px;
+            }
+
+
+            .dish-content p {
+
+                font-size: 14px;
+            }
+
+        }
+
+.reviews-section{ background-color:#EFE2D0; padding:90px 8% 100px; text-align:center; } .reviews-heading{ color:#8B1E1E; font-size:42px; margin-bottom:12px; font-weight:700; } .reviews-subtitle{ color:#6d5b50; font-size:22px; line-height:1.6; margin-bottom:50px; } .reviews-container{ max-width:1200px; margin:auto; display:grid; grid-template-columns:repeat(3,1fr); gap:25px; } .review-card{ background-color:#FAF7F2; padding:30px 25px; border-radius:18px; box-shadow:0 8px 25px rgba(43,29,22,.08); transition:.4s ease; } .review-card:hover{ transform:translateY(-8px); box-shadow:0 18px 35px rgba(43,29,22,.15); } .review-stars{ color:#C99A4A; font-size:22px; margin-bottom:18px; letter-spacing:3px; } .review-text{ color:#6d5b50; font-size:16px; line-height:1.7; margin-bottom:22px; } .review-card h3{ color:#8B1E1E; font-size:18px; margin-bottom:5px; } .review-location{ color:#8b7a6d; font-size:13px; } /* Mobile */ @media(max-width:900px){ .reviews-container{ grid-template-columns:1fr; max-width:600px; } } @media(max-width:650px){ .reviews-section{ padding:65px 7% 75px; } .reviews-heading{ font-size:32px; } .reviews-subtitle{ font-size:18px; margin-bottom:35px; } .review-card{ padding:25px 20px; } .review-text{ font-size:14px; } } </style>
+
+<style> .contact-section{ background-color:#FAF7F2; padding:90px 8% 100px; text-align:center; } .contact-heading{ color:#8B1E1E; font-size:42px; margin-bottom:12px; font-weight:700; } .contact-subtitle{ color:#6d5b50; font-size:22px; line-height:1.6; margin-bottom:45px; } .contact-form{ max-width:850px; margin:auto; background-color:#EFE2D0; padding:40px; border-radius:20px; box-shadow:0 10px 30px rgba(43,29,22,.10); text-align:left; } .form-row{ display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-bottom:20px; } .form-group{ display:flex; flex-direction:column; } .form-group label{ color:#8B1E1E; font-size:15px; font-weight:600; margin-bottom:8px; } .form-group input, .form-group select, .form-group textarea{ width:100%; padding:13px 15px; border:1px solid #d8c4a8; border-radius:10px; background-color:#FAF7F2; color:#2B1D16; font-size:14px; outline:none; font-family:Arial,sans-serif; transition:.3s ease; } .form-group input:focus, .form-group select:focus, .form-group textarea:focus{ border-color:#8B1E1E; box-shadow:0 0 0 2px rgba(139,30,30,.08); } .form-group textarea{ height:110px; resize:none; } .full-width{ margin-bottom:20px; } .contact-btn{ display:block; margin:10px auto 0; padding:13px 30px; background-color:#8B1E1E; color:white; border:none; border-radius:25px; font-size:14px; cursor:pointer; transition:.3s ease; } .contact-btn:hover{ background-color:#641515; transform:translateY(-3px); } /* Mobile */ @media(max-width:650px){ .contact-section{ padding:65px 7% 75px; } .contact-heading{ font-size:32px; } .contact-subtitle{ font-size:18px; margin-bottom:35px; } .contact-form{ padding:25px 20px; } .form-row{ grid-template-columns:1fr; gap:20px; } } </style>
+</head>
+<body>  
+    <section class="hero">
+
+
+        <div class="hero-bg image1"></div>
+
+        <div class="hero-bg image2"></div>
+
+  
+        <div class="hero-bg image3"></div>
+
+        <div class="hero-bg image4"></div>
+
+        <div class="hero-bg image5"></div>
+
+        <div class="hero-bg image6"></div>
+
+        <div class="hero-bg image7"></div>
+        <nav>
+
+            <div class="brand">
+
+                <img
+                    src="images/logo.png"
+                    alt="Flavour Fusion Logo"
+                >
+
+
+                <div class="brand-text">
+
+                    <h2>
+                        FLAVOUR FUSION
+                    </h2>
+
+
+                    <p>
+                        AUTHENTIC TASTE • FRESH FLAVOURS
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="nav-links">
+
+                <a href="#">
+                    Home
+                </a>
+
+                <a href="#">
+                    Menu
+                </a>
+
+                <a href="#">
+                    About
+                </a>
+
+                <a href="#">
+                    Gallery
+                </a>
+
+                <a href="#">
+                    Contact
+                </a>
+
+            </div>
+
+
+
+            <button class="order-btn">
+
+                ORDER NOW
+
+            </button>
+
+        </nav>
+
+
+
+        <!-- ================= HERO CONTENT ================= -->
+
+        <div class="hero-content">
+
+            <p class="small-text">
+
+                AUTHENTIC • FRESH • DELICIOUS
+
+            </p>
+
+
+            <h1>
+
+                A Fusion of
+                <span>Flavours</span>,
+                <br>
+
+                A Taste to Remember.
+
+            </h1>
+
+
+            <h3>
+
+                Experience rich Indian flavours crafted with
+                fresh ingredients, traditional recipes and
+                a modern touch.
+
+            </h3>
+
+
+            <button class="hero-btn">
+
+                EXPLORE MENU
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================================================= -->
+    <!-- ================= ABOUT ========================= -->
+    <!-- ================================================= -->
+
+    <section class="about">
+
+
+        <div class="about-text">
+
+            <p class="small-heading">
+
+                WELCOME TO FLAVOUR FUSION
+
+            </p>
+
+
+            <h2>
+
+                Where Every Dish Tells a Story
+
+            </h2>
+
+
+            <p class="description">
+
+                At Flavour Fusion, we bring together authentic
+                Indian flavours and fresh ingredients to create
+                memorable dining experiences.
+                From delicious thalis to rich curries,
+                every dish is prepared with passion and care.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="about-image">
+
+            <img
+                src="images/about-kitchen.jpg"
+                alt="Flavour Fusion Kitchen"
+            >
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================================================= -->
+    <!-- ================= ORDER FEATURES ================ -->
+    <!-- ================================================= -->
+
+    <section class="order-features">
+
+
+        <!-- ONLINE ORDER -->
+
+        <div class="order-card">
+
+            <div class="order-icon">
+                🛵
+            </div>
+
+
+            <div>
+
+                <h3>
+                    Online Order
+                </h3>
+
+
+                <p>
+
+                    Free delivery up to 5 km.
+                    Order your favourite meals
+                    from the comfort of your home.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- EVERYDAY OFFERS -->
+
+        <div class="order-card">
+
+            <div class="order-icon">
+                🎁
+            </div>
+
+
+            <div>
+
+                <h3>
+                    Everyday Offers
+                </h3>
+
+
+                <p>
+
+                    Enjoy exciting offers and
+                    special deals every day.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- SECURE PAYMENT -->
+
+        <div class="order-card">
+
+            <div class="order-icon">
+                🔒
+            </div>
+
+
+            <div>
+
+                <h3>
+                    Secure Payment
+                </h3>
+
+
+                <p>
+
+                    Pay easily with UPI,
+                    Google Pay and other
+                    secure payment options.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================================================= -->
+    <!-- ================= WHY CHOOSE US ================= -->
+    <!-- ================================================= -->
+
+    <section class="why-section">
+
+
+        <div class="heading-line"></div>
+
+
+        <h1 class="why-heading">
+
+            Why Choose Us?
+
+        </h1>
+
+
+        <p class="why-subtitle">
+
+            More than just a meal — it's an experience
+            crafted with passion.
+
+        </p>
+
+
+
+        <div class="why-container">
+
+
+            <!-- AUTHENTIC RECIPES -->
+
+            <div class="feature">
+
+                <div class="feature-icon">
+                    🍛
+                </div>
+
+
+                <h2>
+                    Authentic Recipes
+                </h2>
+
+
+                <p>
+
+                    Traditional flavours with a modern
+                    touch, bringing the true taste of
+                    India to your table.
+
+                </p>
+
+            </div>
+
+
+
+            <!-- FRESH INGREDIENTS -->
+
+            <div class="feature">
+
+                <div class="feature-icon">
+                    🥬
+                </div>
+
+
+                <h2>
+                    Fresh Ingredients
+                </h2>
+
+
+                <p>
+
+                    Fresh ingredients prepared daily
+                    to make every dish delicious
+                    and memorable.
+
+                </p>
+
+            </div>
+
+
+
+            <!-- MADE WITH CARE -->
+
+            <div class="feature">
+
+                <div class="feature-icon">
+                    👨‍🍳
+                </div>
+
+
+                <h2>
+                    Made With Care
+                </h2>
+
+
+                <p>
+
+                    Every dish is prepared with
+                    attention to flavour, quality
+                    and presentation.
+
+                </p>
+
+            </div>
+
+
+
+            <!-- FOOD LOVERS -->
+
+            <div class="feature">
+
+                <div class="feature-icon">
+                    ❤️
+                </div>
+
+
+                <h2>
+                    Made For Food Lovers
+                </h2>
+
+
+                <p>
+
+                    A warm dining experience created
+                    for people who truly love great food.
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================================================= -->
+    <!-- =============== SIGNATURE DISHES ================ -->
+    <!-- ================================================= -->
+
+    <section class="signature-section">
+
+
+        <div class="heading-line"></div>
+
+
+        <h1 class="signature-heading">
+
+            Our Signature Dishes
+
+        </h1>
+
+
+        <p class="signature-subtitle">
+
+            A taste of our most-loved flavours, crafted to make
+            every meal memorable.
+
+        </p>
+
+
+
+        <div class="dish-container">
+
+
+            <!-- ================================================= -->
+            <!-- 1. CHICKEN THALI -->
+            <!-- ================================================= -->
+
+            <div class="dish-card">
+
+                <div class="dish-image">
+
+                    <img
+                        src="images/chicken-thali.jpg"
+                        alt="Chicken Thali"
+                    >
+
+
+                    <span class="popular-badge">
+
+                        🔥 POPULAR
+
+                    </span>
+
+                </div>
+
+
+                <div class="dish-content">
+
+                    <h2>
+                        Chicken Thali
+                    </h2>
+
+
+                    <p>
+
+                        A hearty Indian thali with flavourful
+                        chicken curry and traditional sides.
+
+                    </p>
+
+
+                    <div class="dish-bottom">
+
+                        <span class="price">
+
+                            ₹299
+
+                        </span>
+
+
+                        <button class="dish-btn">
+
+                            ORDER NOW
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ================================================= -->
+            <!-- 2. MUTTON THALI -->
+            <!-- ================================================= -->
+
+            <div class="dish-card">
+
+                <div class="dish-image">
+
+                    <img
+                        src="images/mutton-thali.jpg"
+                        alt="Mutton Thali"
+                    >
+
+
+                    <span class="popular-badge">
+
+                        ⭐ CHEF'S PICK
+
+                    </span>
+
+                </div>
+
+
+                <div class="dish-content">
+
+                    <h2>
+                        Mutton Thali
+                    </h2>
+
+
+                    <p>
+
+                        Rich and aromatic mutton curry served
+                        with delicious traditional accompaniments.
+
+                    </p>
+
+
+                    <div class="dish-bottom">
+
+                        <span class="price">
+
+                            ₹349
+
+                        </span>
+
+
+                        <button class="dish-btn">
+
+                            ORDER NOW
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ================================================= -->
+            <!-- 3. FISH CURRY -->
+            <!-- ================================================= -->
+
+            <div class="dish-card">
+
+                <div class="dish-image">
+
+                    <img
+                        src="images/fish-curry.jpg"
+                        alt="Fish Curry"
+                    >
+
+
+                    <span class="popular-badge">
+
+                        ❤️ FAVOURITE
+
+                    </span>
+
+                </div>
+
+
+                <div class="dish-content">
+
+                    <h2>
+                        Fish Curry Meal
+                    </h2>
+
+
+                    <p>
+
+                        Tender fish cooked in a rich,
+                        aromatic Indian curry with traditional sides.
+
+                    </p>
+
+
+                    <div class="dish-bottom">
+
+                        <span class="price">
+
+                            ₹279
+
+                        </span>
+
+
+                        <button class="dish-btn">
+
+                            ORDER NOW
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ================================================= -->
+            <!-- 4. VEG THALI -->
+            <!-- ================================================= -->
+
+            <div class="dish-card">
+
+                <div class="dish-image">
+
+                    <img
+                        src="images/veg-thali.jpg"
+                        alt="Veg Thali"
+                    >
+
+
+                    <span class="popular-badge">
+
+                        🌿 VEG SPECIAL
+
+                    </span>
+
+                </div>
+
+
+                <div class="dish-content">
+
+                    <h2>
+                        Veg Thali
+                    </h2>
+
+
+                    <p>
+
+                        A wholesome vegetarian thali packed with
+                        fresh flavours and traditional recipes.
+
+                    </p>
+
+
+                    <div class="dish-bottom">
+
+                        <span class="price">
+
+                            ₹229
+
+                        </span>
+
+
+                        <button class="dish-btn">
+
+                            ORDER NOW
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ================================================= -->
+            <!-- 5. EGG CURRY -->
+            <!-- ================================================= -->
+
+            <div class="dish-card">
+
+                <div class="dish-image">
+
+                    <img
+                        src="images/egg-curry.jpg"
+                        alt="Egg Curry Meal"
+                    >
+
+
+                    <span class="popular-badge">
+
+                        🍳 SPECIAL
+
+                    </span>
+
+                </div>
+
+
+                <div class="dish-content">
+
+                    <h2>
+                        Egg Curry Meal
+                    </h2>
+
+
+                    <p>
+
+                        Delicious boiled eggs cooked in a
+                        rich and flavourful Indian curry.
+
+                    </p>
+
+
+                    <div class="dish-bottom">
+
+                        <span class="price">
+
+                            ₹199
+
+                        </span>
+
+
+                        <button class="dish-btn">
+
+                            ORDER NOW
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ================================================= -->
+            <!-- 6. PANEER SPECIAL -->
+            <!-- ================================================= -->
+
+            <div class="dish-card">
+
+                <div class="dish-image">
+
+                    <img
+                        src="images/veg-thali.jpg"
+                        alt="Paneer Special"
+                    >
+
+
+                    <span class="popular-badge">
+
+                        🧀 VEG FAVOURITE
+
+                    </span>
+
+                </div>
+
+
+                <div class="dish-content">
+
+                    <h2>
+                        Paneer Special
+                    </h2>
+
+
+                    <p>
+
+                        Soft paneer cooked in a creamy,
+                        aromatic gravy with Indian spices.
+
+                    </p>
+
+
+                    <div class="dish-bottom">
+
+                        <span class="price">
+
+                            ₹249
+
+                        </span>
+
+
+                        <button class="dish-btn">
+
+                            ORDER NOW
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+<div class="dish-card">
+
+                <div class="dish-image">
+
+                    <img
+                        src="images/hero-thali.jpg"
+                        alt="Flavour Fusion Special"
+                    >
+
+
+                    <span class="popular-badge">
+
+                        👑 SIGNATURE
+
+                    </span>
+
+                </div>
+
+
+                <div class="dish-content">
+
+                    <h2>
+                        Flavour Fusion Special
+                    </h2>
+
+
+                    <p>
+
+                        Our special combination of rich Indian
+                        flavours created for a memorable feast.
+
+                    </p>
+
+
+                    <div class="dish-bottom">
+
+                        <span class="price">
+
+                            ₹399
+
+                        </span>
+
+
+                        <button class="dish-btn">
+
+                            ORDER NOW
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+<section class="reviews-section">
+
+    <div class="heading-line"></div>
+
+    <h1 class="reviews-heading">
+        What Our Customers Say
+    </h1>
+
+    <p class="reviews-subtitle">
+        Loved by food lovers, one delicious meal at a time.
+    </p>
+
+    <div class="reviews-container">
+
+        <div class="review-card">
+
+            <div class="review-stars">
+                ★★★★★
+            </div>
+
+            <p class="review-text">
+                "The food was absolutely delicious and full of authentic Indian flavours. Everything tasted fresh and perfectly cooked."
+            </p>
+
+            <h3>
+                Simran K.
+            </h3>
+
+            <p class="review-location">
+                Happy Customer
+            </p>
+
+        </div>
+
+        <div class="review-card">
+
+            <div class="review-stars">
+                ★★★★★
+            </div>
+
+            <p class="review-text">
+                "Loved the chicken thali! The portions were generous and the flavours were amazing."
+            </p>
+
+            <h3>
+                Arjun S.
+            </h3>
+
+            <p class="review-location">
+                Happy Customer
+            </p>
+
+        </div>
+
+        <div class="review-card">
+
+            <div class="review-stars">
+                ★★★★★
+            </div>
+
+            <p class="review-text">
+                "Fresh food, beautiful presentation and wonderful flavours. Definitely coming back again!"
+            </p>
+
+            <h3>
+                Mehak R.
+            </h3>
+
+            <p class="review-location">
+                Happy Customer
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+               <section class="contact-section">
+
+    <div class="heading-line"></div>
+
+    <h1 class="contact-heading">
+        Contact Us
+    </h1>
+
+    <p class="contact-subtitle">
+        Ready to enjoy your favourite meal? Place your order with us.
+    </p>
+
+    <form class="contact-form">
+
+        <div class="form-row">
+
+            <div class="form-group">
+
+                <label for="name">
+                    Your Name
+                </label>
+
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="Enter your name"
+                    required
+                >
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="mobile">
+                    Mobile Number
+                </label>
+
+                <input
+                    type="tel"
+                    id="mobile"
+                    placeholder="Enter your mobile number"
+                    required
+                >
+
+            </div>
+
+        </div>
+
+        <div class="form-row">
+
+            <div class="form-group">
+
+                <label for="email">
+                    Email ID
+                </label>
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Enter your email"
+                >
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="order">
+                    What would you like to order?
+                </label>
+
+                <select id="order" required>
+
+                    <option value="">
+                        Select your dish
+                    </option>
+
+                    <option>
+                        Chicken Thali
+                    </option>
+
+                    <option>
+                        Mutton Thali
+                    </option>
+
+                    <option>
+                        Fish Curry Meal
+                    </option>
+
+                    <option>
+                        Veg Thali
+                    </option>
+
+                    <option>
+                        Egg Curry Meal
+                    </option>
+
+                    <option>
+                        Paneer Special
+                    </option>
+
+                    <option>
+                        Flavour Fusion Special
+                    </option>
+
+                </select>
+
+            </div>
+
+        </div>
+
+        <div class="form-row">
+
+            <div class="form-group">
+
+                <label for="quantity">
+                    Quantity
+                </label>
+
+                <input
+                    type="number"
+                    id="quantity"
+                    min="1"
+                    placeholder="Enter quantity"
+                    required
+                >
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="address">
+                    Delivery Address
+                </label>
+
+                <input
+                    type="text"
+                    id="address"
+                    placeholder="Enter your delivery address"
+                    required
+                >
+
+            </div>
+
+        </div>
+
+        <div class="form-group full-width">
+
+            <label for="message">
+                Additional Message
+            </label>
+
+            <textarea
+                id="message"
+                placeholder="Any special instructions for your order?"
+            ></textarea>
+
+        </div>
+
+        <button
+            type="submit"
+            class="contact-btn"
+        >
+            PLACE ORDER
+        </button>
+
+    </form>
+
+</section>
+</body>
+
+</html>
